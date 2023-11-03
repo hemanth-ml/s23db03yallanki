@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title} page.
+  p My self Yallanki Hemanth. I am from Tirupathi, india i have come to usa to study my masters in Northwest missouri state university.
+  button(type="button", class="btn btn-warning" onclick="goFaster()") Press Me
+  div(id="faster") Increase the speed 
+  a(href="/movies") Movies Results page
+  script.
+    let mphVal = 20;
+    let changeVal = 1;
+    function goFaster() {
+      mphValVal += changeVal;
+      changeVal += 1;
+      document.getElementById('faster').textContent = `mphVal ${mphVal} with changeVal ${changeVal}`; 
+    }

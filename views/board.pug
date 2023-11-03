@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  p Board details: rows & Columns: #{query.rows}, #{query.cols}  
+   
+  - var rows = Number(query.rows)  
+  - var cols = Number(query.cols) 
+
+  - if (!Number.isInteger(rows) || !Number.isInteger(cols)){
+    p please enter a valid Integer value 
+    -}
+  - else if (rows < 1 || rows > 10){
+    p Row values should be in between 1 to 10
+    -}
+  - else if (cols < 1 || cols > 10){
+    p Column values should be in between 1 to 10
+    -}
+  - else{
+    table#outer  
+      - for (let ym = 0; ym < rows; ym++){ 
+        tr#middle  
+          - for (let my = 0; my < cols; my++){
+            - if (ym === my){
+              td= 1
+              -}
+            - else if (ym === my + 1){
+              td= 2
+              -}
+            - else if (ym === my - 1){
+              td= ym
+              -}
+            - else{
+              td= 0
+              -}
+          -}
+      -}
+    -}
