@@ -2,13 +2,13 @@ extends layout
 
 block content
   h1= title 
-   - var results=[{movieName:"Inter stellar",movieRelasedDate:2013,moviePrice:20.0},{movieName:"Tales",movieRelasedDate:2014,moviePrice:10.0},{movieName:"RRR",movieRelasedDate:2015,moviePrice:22.0}]
+  - var results = [{movieName:"Inter stellar", movieReleasedDate:2013, moviePrice:20.0},{movieName:"Tales", movieReleasedDate:2014,moviePrice:10.0},{movieName:"RRR", movieReleasedDate:2015,moviePrice:22.0}];
+  
   div(class="container-fluid")
-  div(class="row")
-   each ym,index in results
-    div(class="col-sm-2" onclick=`buy(${index})`) #{ym.movieName}, #{ym.movieRelasedDate}, #{ym.moviePrice}
-    script.
-        function buy(a)
-        {
+    div(class="row")
+      each ym,index in results
+        div(class="col-sm-2" onclick=`buy(${index})`) #{ym.movieName}, #{ym.movieReleasedDate}, #{ym.moviePrice}
+        script.
+          function buy(a) {
             alert(`movies searched ${a+1}`)
-        }
+          }

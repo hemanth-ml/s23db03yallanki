@@ -1,0 +1,29 @@
+extends layout
+ 
+block content
+  h1= title
+ 
+  if (toShow == null)
+    h2 No instance to details
+  else
+    - let movieid = toShow._id
+    - let movieName = toShow.movieName
+    - let movieReleasedDate = toShow.movieReleasedDate
+    - let moviePrice = toShow.moviePrice
+ 
+    div
+      div.row
+        div(class='movieAttr mr-3') movie ID is:
+        divdiv(style='background-color: #d683b4; padding: 5px; border: 10px solid #8cb8df; border-color: #d17b21;') #{movieid}
+ 
+      div.row
+        div(class='movieAttr mr-3') movieName is:
+        divdiv(style='background-color: #d683b4; padding: 5px; border: 10px solid #8cb8df; border-color: #d17b21;') #{movieName}
+ 
+      div.row
+        div(class='movieAttr mr-3')  RelasedDate is:
+        divdiv(style='background-color: #d683b4; padding: 5px; border: 10px solid #8cb8df; border-color: #d17b21;') #{movieReleasedDate}
+ 
+      div.row
+        div(class='movieAttr mr-3') moviePrice is:
+        divdiv(style='background-color: #d683b4; padding: 5px; border: 10px solid #8cb8df; border-color: #d17b21;') #{moviePrice}
